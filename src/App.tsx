@@ -1,9 +1,10 @@
 import './App.scss';
+import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <div className="App">
-      New project
+    <div className="wrapper">
+      <Header />
     </div>
   );
 }

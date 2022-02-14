@@ -1,0 +1,61 @@
+@import "../../style/variables";
+
+
+.header {
+  background-color: $color-dark;
+  color: $color-mainBG;
+  margin: 0px 0px 20px 0px;
+  color: $color-mainBG;
+
+  &__container {
+    display: flex;
+    min-height: 66px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    a {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 44px;
+        margin-right: 15px;
+      }
+
+      p {
+        color: $color-mainBG;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  &__logout {
+    margin: 0 0 0 31px;
+    width: 80px;
+    height: 25px;
+    background-color: $color-blue;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      background-color: $color-hover;
+      box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    &:active {
+      box-shadow: none;
+      background-color: $color-active;
+      font-size: 14px;
+    }
+  }
+}
