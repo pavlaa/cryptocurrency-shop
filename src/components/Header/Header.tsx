@@ -21,7 +21,7 @@ const Header: React.FC = () => {
     <header className={style.header}>
       <div className={`${style.header__container} _container`}>
         <div className={ style.header__logo }>
-          <Link to="/profile">
+          <Link to="/">
             <img src={ logo } alt={ "logo" }/>
             <p>cryptoShop</p>
           </Link>

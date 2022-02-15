@@ -5,10 +5,17 @@ interface CustomButtonProps {
   onClick?: () => void;
   size: string;
   weight: string;
-  color?: string
+  color?: string;
+  type?: 'submit'  // how type type in submit button
 }
 
-const CustomButton: React.FC<CustomButtonProps> = ({children, size, weight, color, ...props}) => {
+const CustomButton: React.FC<CustomButtonProps> = ({
+                                                     children,
+                                                     size,
+                                                     weight,
+                                                     color,
+                                                     ...props
+                                                   }) => {
   return (
     <button style={{fontSize: size, fontWeight: weight, backgroundColor: color}} {...props} className={styles.button}>
       {children}
