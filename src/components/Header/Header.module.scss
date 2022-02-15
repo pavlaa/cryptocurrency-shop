@@ -36,26 +36,9 @@
     }
   }
 
-  &__logout {
-    margin: 0 0 0 31px;
+  &__btn {
+    margin: 0 0 0 15px;
     width: 80px;
     height: 25px;
-    background-color: $color-blue;
-    outline: none;
-    border-radius: 10px;
-    border: none;
-    font-size: 14px;
-    transition: all 0.3s ease 0s;
-
-    &:hover {
-      background-color: $color-hover;
-      box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    &:active {
-      box-shadow: none;
-      background-color: $color-active;
-      font-size: 14px;
-    }
   }
 }

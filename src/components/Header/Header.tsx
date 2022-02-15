@@ -5,6 +5,7 @@ import logo from '../../img/logo.svg'
 import {useTypedSelector} from "../../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
 import {AuthActionTypes} from "../../types/authTypes";
+import CustomButton from "../UI/CustomButton";
 
 
 
@@ -25,18 +26,18 @@ const Header: React.FC = () => {
             <p>cryptoShop</p>
           </Link>
         </div>
-        <div className={ style.header__login }>
-          { isLogin
-            ?
-            <>
-              <button className={style.header__logout} onClick={ onLogout }>Logout</button>
-            </>
-            :
+        {isLogin
+          ?
+          <div className={style.header__btn}>
+            <CustomButton size="14px" weight="700" onClick={onLogout}>Log Out</CustomButton>
+          </div>
+          :
+          <div className={style.header__btn}>
             <Link to="/login">
-              <button className={style.header__logout}>Login</button>
+              <CustomButton size="14px" weight="700">Log In</CustomButton>
             </Link>
-          }
-        </div>
+          </div>
+        }
       </div>
     </header>
   );
