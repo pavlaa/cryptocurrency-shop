@@ -27,3 +27,6 @@ yarn-error.log*
 
 # api key
 /.env
+
+# data folder
+/data
