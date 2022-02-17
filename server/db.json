@@ -83,5 +83,14 @@
       "id": 12
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "pavlaa@gmail.com",
+      "password": "$2a$10$bFaqPSq/xDZTdwMAU/1F6.ZrZ4gdZ4bV7tDn4kmr/0mU2jKp/t5Um",
+      "name": "Pavel",
+      "shortName": "pavlik",
+      "image": "https://wallpaperaccess.com/full/6295120.jpg",
+      "id": 1
+    }
+  ]
 }
