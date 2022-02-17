@@ -4,10 +4,14 @@
 .input {
   margin-bottom: 15px;
   padding: 16px 20px;
-  width: 322px;
+  width: 100%;
   border-radius: 10px;
   border: 1px $color-dark solid;
   font-size: 16px;
+
+  input {
+    width: 100%;
+  }
 }
 
 .error {

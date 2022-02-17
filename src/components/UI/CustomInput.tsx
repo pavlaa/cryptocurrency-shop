@@ -2,16 +2,11 @@ import React, {InputHTMLAttributes} from 'react';
 import style from './CustomInput.module.scss'
 
 
-export interface IValues {
-  email: string;
-  password: string;
-}
-
 interface CustomInputProps extends InputHTMLAttributes<HTMLInputElement>{
   values: string;
   handleChange: any;
   handleBlur: any;
-  name: string;
+  id: string;
   touched: boolean | undefined;
   errors: string | undefined;
 }
@@ -19,7 +14,7 @@ interface CustomInputProps extends InputHTMLAttributes<HTMLInputElement>{
 const CustomInput: React.FC<CustomInputProps> = ({ values,
                                                    handleChange,
                                                    handleBlur,
-                                                   name,
+                                                   id,
                                                    touched,
                                                    errors,
                                                    ...inputProps}) => {
@@ -30,7 +25,7 @@ const CustomInput: React.FC<CustomInputProps> = ({ values,
           value={values}
           onChange={handleChange}
           onBlur={handleBlur}
-          id={name}
+          id={id}
           {...inputProps}
         />
       </div>

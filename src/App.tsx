@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="wrapper">
       <Header />
-      <div className="body _container">
+      <div className="body">
         <Routes>
           <Route path="/login" element={<Login />}/>
         </Routes>

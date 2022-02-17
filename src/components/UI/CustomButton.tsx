@@ -4,20 +4,20 @@ import styles from './CustomButton.module.scss'
 interface CustomButtonProps {
   onClick?: () => void;
   size: string;
-  weight: string;
-  color?: string;
+  green?: boolean;
   type?: 'submit'  // how type type in submit button
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
                                                      children,
                                                      size,
-                                                     weight,
-                                                     color,
+                                                     green,
                                                      ...props
                                                    }) => {
   return (
-    <button style={{fontSize: size, fontWeight: weight, backgroundColor: color}} {...props} className={styles.button}>
+    <button style={{fontSize: size}} {...props} className={green
+      ? `${styles.button} ${styles.green}`
+      : styles.button}>
       {children}
     </button>
   );

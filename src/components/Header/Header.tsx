@@ -29,12 +29,12 @@ const Header: React.FC = () => {
         {isLogin
           ?
           <div className={style.header__btn}>
-            <CustomButton size="14px" weight="700" onClick={onLogout}>Log Out</CustomButton>
+            <CustomButton size="14px" onClick={onLogout}>Log Out</CustomButton>
           </div>
           :
           <div className={style.header__btn}>
             <Link to="/login">
-              <CustomButton size="14px" weight="700">Log In</CustomButton>
+              <CustomButton size="14px">Log In</CustomButton>
             </Link>
           </div>
         }
