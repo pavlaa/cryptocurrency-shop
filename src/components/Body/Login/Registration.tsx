@@ -4,14 +4,8 @@ import CustomInput from "../../UI/CustomInput";
 import CustomButton from "../../UI/CustomButton";
 import {useFormik} from "formik";
 import * as Yup from "yup";
+import {IRegistration} from "../../../types";
 
-interface IRegistration {
-  newEmail: string;
-  newPassword: string;
-  fullName: string;
-  nickName: string;
-  image?: string;
-}
 
 interface RegistrationProps {
   isActive: boolean;

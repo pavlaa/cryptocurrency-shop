@@ -7,7 +7,8 @@ export interface IUser {
   id: number;
   email: string;
   name: string;
-  photo: string;
+  shortName: string;
+  image: string;
 }
 
 export interface ICoin {
@@ -16,4 +17,17 @@ export interface ICoin {
   shortName: string;
   price: number;
   image: string;
+}
+
+export interface ILogin {
+  email: string;
+  password: string;
+}
+
+export interface IRegistration {
+  newEmail: string;
+  newPassword: string;
+  fullName: string;
+  nickName: string;
+  image?: string;
 }

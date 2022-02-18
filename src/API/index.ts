@@ -20,11 +20,8 @@ export const AuthAPI = {
   login(email: string, password: string): Promise<AxiosResponse<AuthResponse>> {
     return instance.post<AuthResponse>(`/login`, {email, password})
   },
-  registration(email: string, password: string, name:string, photo: string): Promise<AxiosResponse<AuthResponse>> {
-    return instance.post<AuthResponse>(`/register`, {email, password, name, photo})
-  },
-  logout(): Promise<void> {
-    return instance.post(`/login`)
+  registration(email: string, password: string, fullName:string, nickName: string, image: string | undefined): Promise<AxiosResponse<AuthResponse>> {
+    return instance.post<AuthResponse>(`/register`, {email, password, fullName, nickName, image})
   }
 }
 

@@ -86,11 +86,19 @@
   "users": [
     {
       "email": "pavlaa@gmail.com",
-      "password": "$2a$10$bFaqPSq/xDZTdwMAU/1F6.ZrZ4gdZ4bV7tDn4kmr/0mU2jKp/t5Um",
+      "password": "$2a$10$PUpfzxZPKSJUNzdKdXU2cuJEtNic0Vd/LJl1/CTNoq9VinBtAdDGe",
       "name": "Pavel",
       "shortName": "pavlik",
       "image": "https://wallpaperaccess.com/full/6295120.jpg",
       "id": 1
+    },
+    {
+      "email": "pavlaaa@gmail.com",
+      "password": "$2a$10$NCMtb032odIJugTGkW5PHuLWGq5SncnKvcbXQcYq4ot1C63dY8wXm",
+      "name": "Pavel",
+      "shortName": "pavlik",
+      "image": "https://wallpaperaccess.com/full/6295120.jpg",
+      "id": 2
     }
   ]
 }
