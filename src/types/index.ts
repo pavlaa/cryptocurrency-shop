@@ -6,9 +6,10 @@ export interface AuthResponse {
 export interface IUser {
   id: number;
   email: string;
-  name: string;
-  shortName: string;
+  fullName: string;
+  nickName: string;
   image: string;
+  balance?: number;
 }
 
 export interface ICoin {

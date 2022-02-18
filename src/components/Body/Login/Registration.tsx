@@ -5,6 +5,8 @@ import CustomButton from "../../UI/CustomButton";
 import {useFormik} from "formik";
 import * as Yup from "yup";
 import {IRegistration} from "../../../types";
+import {useDispatch} from "react-redux";
+import {RegistrationFetch} from "../../../store/actions/authAction";
 
 
 interface RegistrationProps {
@@ -13,6 +15,8 @@ interface RegistrationProps {
 }
 
 const Registration: React.FC<RegistrationProps> = ({isActive, setActive}) => {
+  const dispatch = useDispatch()
+
   const {handleSubmit, handleChange, values, touched, errors, handleBlur} = useFormik({
     initialValues: {
       newEmail: '',
@@ -29,7 +33,7 @@ const Registration: React.FC<RegistrationProps> = ({isActive, setActive}) => {
       image: Yup.string().url('Enter link photo')
     }),
     onSubmit: (values: IRegistration) => {
-      console.log(values)
+      dispatch(RegistrationFetch(values))
     }
   })
 

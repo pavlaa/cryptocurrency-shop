@@ -1,8 +1,8 @@
-import {AuthResponse, IUser} from "./index";
+import {IUser} from "./index";
 
 export interface AuthState {
   isLogin: boolean;
-  profile: {}
+  profile: IUser | null;
 }
 
 export enum AuthActionTypes {

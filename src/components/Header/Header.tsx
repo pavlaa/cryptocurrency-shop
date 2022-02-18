@@ -10,7 +10,7 @@ import CustomButton from "../UI/CustomButton";
 
 
 const Header: React.FC = () => {
-  const {isLogin} = useTypedSelector(state => state.auth)
+  const {isLogin, profile} = useTypedSelector(state => state.auth)
   const dispatch = useDispatch();
 
   const onLogout = () => {
@@ -28,8 +28,15 @@ const Header: React.FC = () => {
         </div>
         {isLogin
           ?
-          <div className={style.header__btn}>
-            <CustomButton size="14px" onClick={onLogout}>Log Out</CustomButton>
+          <div className={style.login}>
+            <div className={style.login__balance}>${profile?.balance}</div>
+            <div className={style.login__img}>
+              <img src={profile?.image} alt="user-photo"/>
+            </div>
+            <div className={style.login__nick}>{profile?.nickName}</div>
+            <div className={style.header__btn}>
+              <CustomButton size="14px" onClick={onLogout}>Log Out</CustomButton>
+            </div>
           </div>
           :
           <div className={style.header__btn}>

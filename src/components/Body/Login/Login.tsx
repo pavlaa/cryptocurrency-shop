@@ -5,6 +5,8 @@ import {useFormik} from 'formik';
 import * as Yup from 'yup'
 import CustomInput from "../../UI/CustomInput";
 import Registration from "./Registration";
+import {useDispatch} from "react-redux";
+import {GetLogin} from "../../../store/actions/authAction";
 
 
 interface IValues {
@@ -14,6 +16,7 @@ interface IValues {
 
 const Login: React.FC = () => {
   const [isActive, setActive] = useState(false)
+  const dispatch = useDispatch()
 
   const {handleSubmit, handleChange, values, touched, errors, handleBlur} = useFormik({
     initialValues: {
@@ -25,7 +28,7 @@ const Login: React.FC = () => {
       password: Yup.string().min(6, 'Password must be longest than 3 symbols').required('This field is required'),
     }),
     onSubmit: (values: IValues) => {
-      console.log(values)
+      dispatch(GetLogin(values))
     }
   })
 
