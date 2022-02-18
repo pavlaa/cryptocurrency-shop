@@ -16,7 +16,6 @@ export const RegistrationFetch = ({newEmail, newPassword, fullName, nickName, im
   return async (dispatch: Dispatch<AuthAction>) => {
     const balance = 1000000;
     const response = await AuthAPI.registration(newEmail, newPassword, fullName, nickName, image, balance);
-    debugger
     localStorage.setItem('token', response.data.accessToken);
     dispatch({type: AuthActionTypes.LOGIN, payload: {...response.data.user, balance: 100000}})
   }
