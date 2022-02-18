@@ -1,0 +1,47 @@
+@import "../../../style/variables";
+
+.coins {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+  }
+
+  &__searchbtn {
+    width: 83px;
+    height: 33px;
+    margin-right: 25px;
+  }
+
+  &__searcinput {
+    display: flex;
+    align-items: center;
+    height: 33px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    background-color: #686868;
+
+    input {
+      width: 100%;
+      font-size: 16px;
+      font-weight: 700;
+      color: $color-mainBG;
+      background-color: #686868;
+
+      &::placeholder {
+        color: #C6C6C6;
+      }
+    }
+  }
+}

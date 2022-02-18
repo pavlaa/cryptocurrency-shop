@@ -1,3 +1,12 @@
-.coins {
+@import "../../../style/variables";
 
+
+.coins {
+  margin: 20px 25px 0px;
+  color: $color-text;
+  font-weight: 700;
+
+  &__contsiner {
+
+  }
 }
