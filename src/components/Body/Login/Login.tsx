@@ -7,7 +7,8 @@ import CustomInput from "../../UI/CustomInput";
 import Registration from "./Registration";
 import {useDispatch} from "react-redux";
 import {GetLogin} from "../../../store/actions/authAction";
-
+import {useTypedSelector} from "../../../hooks/useTypedSelector";
+import {Navigate} from "react-router-dom"
 
 interface IValues {
   email: string;
@@ -15,6 +16,7 @@ interface IValues {
 }
 
 const Login: React.FC = () => {
+  const {isLogin} = useTypedSelector(state => state.auth)
   const [isActive, setActive] = useState(false)
   const dispatch = useDispatch()
 
@@ -32,6 +34,9 @@ const Login: React.FC = () => {
     }
   })
 
+  if (isLogin) {
+    return <Navigate to="/coins" replace />
+  }
 
   return (
     <>
