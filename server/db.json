@@ -76,11 +76,6 @@
       "shortName": "BCH",
       "price": 338.43,
       "image": "https://assets.coingecko.com/coins/images/780/small/bitcoin-cash-circle.png?1594689492"
-    },
-    {
-      "email": "olivier@mail.com",
-      "password": "bestPassw0rd",
-      "id": 12
     }
   ],
   "users": [

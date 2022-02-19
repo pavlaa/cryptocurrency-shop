@@ -2,10 +2,10 @@ import {CoinsAction, CoinsActionTypes, CoinsState} from "../../types/coinsTypes"
 
 
 const defaultState: CoinsState = {
-  coins: []
+  coins: null
 }
 
-export const coinsReducer = (state = defaultState, action: CoinsAction): CoinsState => {
+export const CoinsReducer = (state = defaultState, action: CoinsAction): CoinsState => {
   switch (action.type) {
     case CoinsActionTypes.GET_COINS:
       return {...state, coins: action.payload};

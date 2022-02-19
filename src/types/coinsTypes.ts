@@ -2,7 +2,7 @@ import {ICoin} from "./index";
 
 
 export interface CoinsState {
-  coins: ICoin[] | [];
+  coins: ICoin[] | null;
 }
 
 export enum CoinsActionTypes {
