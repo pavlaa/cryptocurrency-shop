@@ -27,7 +27,7 @@ export const AuthAPI = {
                balance: number): Promise<AxiosResponse<AuthResponse>> {
     return instance.post<AuthResponse>(`/register`, {email, password, fullName, nickName, image, balance})
   },
-  getUser(userID: string) {
+  getUser(userID: string): Promise<AxiosResponse<IUser>> {
     return instance.get<IUser>(`/users/${userID}`)
   }
 }
@@ -35,5 +35,8 @@ export const AuthAPI = {
 export const CoinsAPI = {
   getCoins(): Promise<AxiosResponse<ICoin[]>> {
     return instance.get<ICoin[]>(`/coins`)
+  },
+  searchCoin(name: string): Promise<AxiosResponse<ICoin[]>> {
+    return instance.get<ICoin[]>(`/coins?name=${name}`)
   }
 }

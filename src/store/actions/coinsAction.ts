@@ -9,3 +9,15 @@ export const GetCoins = () => {
     dispatch({type: CoinsActionTypes.GET_COINS, payload: response.data})
   }
 }
+
+export const SearchCoin = (name: string) => {
+  return async (dispatch: Dispatch<CoinsAction>) => {
+    if (!name) {
+      const response = await CoinsAPI.getCoins();
+      dispatch({type: CoinsActionTypes.GET_COINS, payload: response.data})
+    } else {
+      const response = await CoinsAPI.searchCoin(name);
+      dispatch({type: CoinsActionTypes.GET_COINS, payload: response.data})
+    }
+  }
+}

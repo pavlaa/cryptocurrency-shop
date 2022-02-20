@@ -1,11 +1,9 @@
-import React from 'react';
+import React, {ButtonHTMLAttributes} from 'react';
 import styles from './CustomButton.module.scss'
 
-interface CustomButtonProps {
-  onClick?: () => void;
+interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   size: string;
   green?: boolean;
-  type?: 'submit'  // how type type in submit button
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({

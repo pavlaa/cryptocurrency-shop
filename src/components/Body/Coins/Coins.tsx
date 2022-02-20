@@ -14,13 +14,13 @@ const Coins: React.FC = () => {
 
   useEffect(() => {
     dispatch(GetCoins())
-  })
+  }, [])
 
 
   return (
     <div className={style.coins}>
       <div className={`${style.coins__container} _container`}>
-        <HeaderCoins />
+        <HeaderCoins title={'Market'} />
         {coinItem}
       </div>
     </div>
