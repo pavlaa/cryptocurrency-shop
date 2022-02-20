@@ -11,7 +11,6 @@ export const AuthReducer = (state = defaultState, action: AuthAction): AuthState
     case AuthActionTypes.LOGIN:
       return {...state, isLogin: true, profile: action.payload}
     case AuthActionTypes.LOGOUT:
-      debugger
       return {...state, isLogin: false, profile: null}
     default:
       return state

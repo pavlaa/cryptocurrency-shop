@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState} from 'react';
 import style from "./HeaderCoins.module.scss";
 import CustomButton from "../../UI/CustomButton";
 import {useDispatch} from "react-redux";
@@ -7,9 +7,10 @@ import {SearchCoin} from "../../../store/actions/coinsAction";
 
 interface HeaderCoins {
   title: string;
+  searchUserCoin?: ((name: string) => void) | undefined;
 }
 
-const HeaderCoins: React.FC<HeaderCoins> = ({title}) => {
+const HeaderCoins: React.FC<HeaderCoins> = ({title, searchUserCoin}) => {
   const [name, getName] = useState('');
   const dispatch = useDispatch();
 
@@ -19,7 +20,11 @@ const HeaderCoins: React.FC<HeaderCoins> = ({title}) => {
 
   const searchCoin = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    dispatch(SearchCoin(name));
+    if (title === 'Wallet' && searchUserCoin) {
+      searchUserCoin(name);
+    } else {
+      dispatch(SearchCoin(name));
+    }
     getName('')
   }
 

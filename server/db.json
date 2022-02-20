@@ -97,12 +97,28 @@
           "count": 2
         },
         {
-          "id": 14,
-          "name": "Bitcoin Cash",
-          "shortName": "BCH",
-          "price": 338.43,
-          "image": "https://assets.coingecko.com/coins/images/780/small/bitcoin-cash-circle.png?1594689492",
+          "id": 3,
+          "name": "BNB",
+          "shortName": "BNB",
+          "price": 430.8,
+          "image": "https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png?1644979850",
+          "count": 4
+        },
+        {
+          "id": 4,
+          "name": "Solana",
+          "shortName": "SOL",
+          "price": 104.22,
+          "image": "https://assets.coingecko.com/coins/images/4128/small/solana.png?1640133422",
           "count": 3
+        },
+        {
+          "id": 5,
+          "name": "Avalanche",
+          "shortName": "AVAX",
+          "price": 96.55,
+          "image": "https://assets.coingecko.com/coins/images/12559/small/coin-round-red.png?1604021818",
+          "count": 1
         }
       ]
     }

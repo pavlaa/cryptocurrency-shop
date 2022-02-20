@@ -6,9 +6,10 @@ import CustomButton from "../../UI/CustomButton";
 
 interface CoinItemProps {
   coin: ICoin;
+  buttonName: string;
 }
 
-const CoinItem: React.FC<CoinItemProps> = ({coin}) => {
+const CoinItem: React.FC<CoinItemProps> = ({coin, buttonName}) => {
   return (
     <div className={style.coin}>
       <div className={style.coin__body}>
@@ -23,12 +24,18 @@ const CoinItem: React.FC<CoinItemProps> = ({coin}) => {
             {coin.name}
           </div>
         </div>
+        {
+          coin.count &&
+          <div className={style.coin__count}>
+            Count: {coin.count}
+          </div>
+        }
         <div className={style.coin__block2}>
           <div className={style.coin__price}>
             $ {coin.price}
           </div>
           <div className={style.coin__btn}>
-            <CustomButton size={"16px"}>Buy</CustomButton>
+            <CustomButton size={"16px"}>{buttonName}</CustomButton>
           </div>
         </div>
       </div>

@@ -35,7 +35,7 @@ const Login: React.FC = () => {
   })
 
   if (isLogin) {
-    return <Navigate to="/coins" replace />
+    return <Navigate to="/" replace />
   }
 
   return (
