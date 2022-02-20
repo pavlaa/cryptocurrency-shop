@@ -1,5 +1,5 @@
 import axios, {AxiosResponse} from 'axios';
-import {AuthResponse, ICoin} from "../types";
+import {AuthResponse, ICoin, IUser} from "../types";
 
 
 const API_URL = 'http://localhost:3004';
@@ -19,8 +19,16 @@ export const AuthAPI = {
   login(email: string, password: string): Promise<AxiosResponse<AuthResponse>> {
     return instance.post<AuthResponse>(`/login`, {email, password})
   },
-  registration(email: string, password: string, fullName:string, nickName: string, image: string | undefined, balance: number): Promise<AxiosResponse<AuthResponse>> {
+  registration(email: string,
+               password: string,
+               fullName:string,
+               nickName: string,
+               image: string | undefined,
+               balance: number): Promise<AxiosResponse<AuthResponse>> {
     return instance.post<AuthResponse>(`/register`, {email, password, fullName, nickName, image, balance})
+  },
+  getUser(userID: string) {
+    return instance.get<IUser>(`/users/${userID}`)
   }
 }
 

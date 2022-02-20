@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import style from './Header.module.scss';
 import {Link} from 'react-router-dom';
 import logo from '../../img/logo.svg'
 import {useTypedSelector} from "../../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
-import {AuthActionTypes} from "../../types/authTypes";
 import CustomButton from "../UI/CustomButton";
+import {GetLogout, GetUser} from "../../store/actions/authAction";
 
 
 
@@ -14,8 +14,15 @@ const Header: React.FC = () => {
   const dispatch = useDispatch();
 
   const onLogout = () => {
-    dispatch({type: AuthActionTypes.LOGOUT})
+    dispatch(GetLogout())
   }
+
+  useEffect(() => {
+    const userID = localStorage.getItem('userID');
+    if (!profile && userID) {
+      dispatch(GetUser(userID))
+    }
+  }, [profile])
 
   return (
     <header className={style.header}>
