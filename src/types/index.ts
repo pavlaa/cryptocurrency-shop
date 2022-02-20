@@ -10,6 +10,7 @@ export interface IUser {
   nickName: string;
   image: string;
   balance?: number;
+  wallet: ICoin[];
 }
 
 export interface ICoin {
@@ -18,6 +19,7 @@ export interface ICoin {
   shortName: string;
   price: number;
   image: string;
+  count?: number;
 }
 
 export interface ILogin {

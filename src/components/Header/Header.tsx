@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import style from './Header.module.scss';
 import {Link} from 'react-router-dom';
 import logo from '../../img/logo.svg'
+import wallet from '../../img/wallet.svg'
 import {useTypedSelector} from "../../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
 import CustomButton from "../UI/CustomButton";
@@ -41,6 +42,11 @@ const Header: React.FC = () => {
               <img src={profile?.image} alt="user-photo"/>
             </div>
             <div className={style.login__nick}>{profile?.nickName}</div>
+            <div className={style.login__wallet}>
+              <Link to="/wallet">
+                <img src={wallet} alt="wallet"/>
+              </Link>
+            </div>
             <div className={style.header__btn}>
               <CustomButton size="14px" onClick={onLogout}>Log Out</CustomButton>
             </div>
