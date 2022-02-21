@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import style from './Coins.module.scss';
-import HeaderCoins from "./HeaderCoins";
-import CoinItem from "./CoinItem";
-import {useTypedSelector} from "../../../hooks/useTypedSelector";
+import HeaderCoins from "../HeaderCoins";
+import CoinItem from "../CoinItem";
+import {useTypedSelector} from "../../../../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
-import {GetCoins} from "../../../store/actions/coinsAction";
+import {GetCoins} from "../../../../store/actions/coinsAction";
 
 const Coins: React.FC = () => {
   const {coins} = useTypedSelector((state) => state.coins)
@@ -18,11 +18,9 @@ const Coins: React.FC = () => {
 
 
   return (
-    <div className={style.coins}>
-      <div className={`${style.coins__container} _container`}>
-        <HeaderCoins title={'Market'} />
-        {coinItem}
-      </div>
+    <div className={`${style.coins} _container`}>
+      <HeaderCoins title={'Market'}/>
+      {coinItem}
     </div>
   );
 };

@@ -65,7 +65,7 @@ const Login: React.FC = () => {
           </div>
         </form>
         <div className="login__create-btn">
-          <CustomButton size={"16px"} green={true} onClick={() => setActive(true)}>Create account</CustomButton>
+          <CustomButton size="16px" color="green" onClick={() => setActive(true)}>Create account</CustomButton>
         </div>
       </div>
       <Registration isActive={isActive} setActive={setActive} />

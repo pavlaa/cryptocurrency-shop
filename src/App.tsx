@@ -2,8 +2,8 @@ import './App.scss';
 import Header from "./components/Header/Header";
 import {Routes, Route} from "react-router-dom"
 import Login from "./components/Body/Login/Login";
-import Coins from "./components/Body/Coins/Coins";
-import Wallet from "./components/Body/Coins/Wallet";
+import Coins from "./components/Body/Coins/Shop/Coins";
+import Wallet from "./components/Body/Coins/Wallet/Wallet";
 
 function App() {
   return (

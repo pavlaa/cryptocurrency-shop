@@ -93,8 +93,8 @@ const Registration: React.FC<RegistrationProps> = ({isActive, setActive}) => {
                        placeholder="Add photo URL"
           />
           <div className={style.registration__createbtn}>
-            <CustomButton size={"16px"}
-                          green={true}
+            <CustomButton size="16px"
+                          color="green"
                           type="submit"
             >Create account</CustomButton>
           </div>

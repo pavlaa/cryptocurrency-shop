@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import style from './Wallet.module.scss';
-import HeaderCoins from "./HeaderCoins";
-import CoinItem from "./CoinItem";
-import {useTypedSelector} from "../../../hooks/useTypedSelector";
+import HeaderCoins from "../HeaderCoins";
+import CoinItem from "../CoinItem";
+import {useTypedSelector} from "../../../../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
-import {CoinsActionTypes} from "../../../types/coinsTypes";
+import {CoinsActionTypes} from "../../../../types/coinsTypes";
 
 const Wallet: React.FC = () => {
   const {profile} = useTypedSelector((state) => state.auth)
@@ -12,8 +12,8 @@ const Wallet: React.FC = () => {
   const dispatch = useDispatch()
 
   let userCoinsItem = userCoins?.map(userCoin => <CoinItem key={userCoin.id}
-                                                           coin={userCoin}
-                                                           buttonName="Sell" />)
+                                                                    coin={userCoin}
+                                                                    buttonName="Sell" />)
 
 
   function searchUserCoin(name: string) {

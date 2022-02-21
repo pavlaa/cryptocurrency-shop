@@ -1,4 +1,4 @@
-@import "../../../style/variables";
+@import "../../../../style/variables";
 
 
 .coins {
@@ -6,7 +6,4 @@
   color: $color-text;
   font-weight: 700;
 
-  &__container {
-
-  }
 }
