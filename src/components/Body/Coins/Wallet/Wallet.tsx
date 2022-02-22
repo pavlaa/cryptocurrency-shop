@@ -27,7 +27,7 @@ const Wallet: React.FC = () => {
 
   return (
     <div className={style.wallet}>
-      <div className={`${style.wallet__container} _container`}>
+      <div className={`${style.wallet} _container`}>
         <HeaderCoins title={'Wallet'} searchUserCoin={searchUserCoin}/>
         {userCoinsItem}
       </div>

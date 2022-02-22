@@ -2,9 +2,13 @@
 
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
   background-color: $color-dark;
   color: $color-mainBG;
-  margin: 0px 0px 20px 0px;
 
   &__container {
     display: flex;

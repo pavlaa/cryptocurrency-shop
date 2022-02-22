@@ -85,7 +85,7 @@
       "fullName": "Pavel",
       "nickName": "PavlegPG",
       "image": "https://bipbap.ru/wp-content/uploads/2017/08/0-70.jpg",
-      "balance": 49475.88,
+      "balance": 40069.29,
       "id": 1,
       "wallet": [
         {
@@ -111,6 +111,14 @@
           "price": 96.55,
           "image": "https://assets.coingecko.com/coins/images/12559/small/coin-round-red.png?1604021818",
           "count": 1
+        },
+        {
+          "id": 10,
+          "name": "Lido Staked Ether",
+          "shortName": "STETH",
+          "price": 3135.53,
+          "image": "https://assets.coingecko.com/coins/images/13442/small/steth_logo.png?1608607546",
+          "count": 3
         }
       ]
     }
