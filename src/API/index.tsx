@@ -1,5 +1,7 @@
+import React from 'react';
 import axios, {AxiosResponse} from 'axios';
 import {AuthResponse, ICoin, IUser, IUserCoin} from "../types";
+import {Navigate} from "react-router-dom";
 
 
 const API_URL = 'http://localhost:3004';
@@ -14,6 +16,16 @@ instance.interceptors.request.use((config) => {
     return config;
   }
 })
+
+instance.interceptors.response.use((config) => {
+  return config;
+}, (error) => {
+  if (error.response.status === 401) {
+    localStorage.removeItem('token');
+    return <Navigate to={'/login'} />
+  }
+})
+
 
 export const AuthAPI = {
   login(email: string, password: string): Promise<AxiosResponse<AuthResponse>> {
