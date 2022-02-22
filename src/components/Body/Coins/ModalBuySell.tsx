@@ -44,25 +44,29 @@ const ModalBuySell: React.FC<ModalBuySellProps> = ({isActive, setActive, coin, b
   const buyCoins = () => {
     if (profile?.balance && userCoins) {
       const newBalance = +(profile?.balance - (buyCount * coin.price)).toFixed(2);
-      let newCount;
-      let newArrCoins;
+      if (newBalance > 0) {
+        let newCount;
+        let newArrCoins;
 
-      const arr = userCoins.map(userCoin => {
-        if (userCoin.id === coin.id) {
-          newCount = userCoin.count + buyCount;
-          return {...userCoin, count: newCount}
+        const arr = userCoins.map(userCoin => {
+          if (userCoin.id === coin.id) {
+            newCount = userCoin.count + buyCount;
+            return {...userCoin, count: newCount}
+          }
+          return userCoin
+        })
+
+        if (newCount) {
+          newArrCoins = arr;
+        } else {
+          newArrCoins = [...userCoins, {...coin, count: buyCount}];
         }
-        return userCoin
-      })
 
-      if (newCount) {
-        newArrCoins = arr;
+        dispatch(buySellCoin(profile.id, newBalance, newArrCoins));
+        setActive(false);
       } else {
-        newArrCoins = [...userCoins, {...coin, count: buyCount}];
+        alert('Your balance have no money!')
       }
-
-      dispatch(buySellCoin(profile.id, newBalance, newArrCoins));
-      setActive(false);
     }
   }
 
@@ -81,6 +85,7 @@ const ModalBuySell: React.FC<ModalBuySellProps> = ({isActive, setActive, coin, b
 
       dispatch(buySellCoin(profile.id, newBalance, newArrCoins));
       setActive(false)
+      setBuyCount(1)
     }
   }
 

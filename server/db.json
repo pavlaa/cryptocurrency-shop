@@ -85,16 +85,32 @@
       "fullName": "Pavel",
       "nickName": "PavlegPG",
       "image": "https://bipbap.ru/wp-content/uploads/2017/08/0-70.jpg",
-      "balance": 144142.04,
+      "balance": 49475.88,
       "id": 1,
       "wallet": [
         {
-          "id": 7,
-          "name": "Dogecoin",
-          "shortName": "DOGE",
-          "price": 0.150015,
-          "image": "https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256",
-          "count": -27
+          "id": 1,
+          "name": "Bitcoin",
+          "shortName": "BTC",
+          "price": 44137.99,
+          "image": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579",
+          "count": 1
+        },
+        {
+          "id": 2,
+          "name": "Ethereum",
+          "shortName": "ETH",
+          "price": 3144.79,
+          "image": "https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880",
+          "count": 2
+        },
+        {
+          "id": 5,
+          "name": "Avalanche",
+          "shortName": "AVAX",
+          "price": 96.55,
+          "image": "https://assets.coingecko.com/coins/images/12559/small/coin-round-red.png?1604021818",
+          "count": 1
         }
       ]
     }
