@@ -31,7 +31,7 @@ const Header: React.FC = () => {
         <div className={ style.header__logo }>
           <Link to="/">
             <img src={ logo } alt={ "logo" }/>
-            <p>cryptoShop</p>
+            <p>CryptoShop</p>
           </Link>
         </div>
         {isLogin

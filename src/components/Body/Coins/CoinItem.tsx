@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import style from './CoinItem.module.scss';
-import {ICoin} from "../../../types";
+import {ICoin, IUserCoin} from "../../../types";
 import CustomButton from "../../UI/CustomButton";
 import ModalBuySell from "./ModalBuySell";
 
 
 interface CoinItemProps {
-  coin: ICoin;
+  coin: ICoin | IUserCoin;
   buttonName: string;
 }
 

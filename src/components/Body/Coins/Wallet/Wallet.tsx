@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import style from './Wallet.module.scss';
 import HeaderCoins from "../HeaderCoins";
 import CoinItem from "../CoinItem";

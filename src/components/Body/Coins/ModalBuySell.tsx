@@ -2,18 +2,23 @@ import React, {Dispatch, SetStateAction, useEffect, useState} from 'react';
 import style from './ModalBuySell.module.scss'
 import {useDispatch} from "react-redux";
 import CustomButton from "../../UI/CustomButton";
-import {ICoin} from "../../../types";
+import {ICoin, IUserCoin} from "../../../types";
+import {useTypedSelector} from "../../../hooks/useTypedSelector";
+import {buySellCoin} from "../../../store/actions/coinsAction";
 
 
 interface ModalBuySellProps {
   isActive: boolean;
   setActive: Dispatch<SetStateAction<boolean>>;
-  coin: ICoin;
+  coin: ICoin | IUserCoin;
   buttonName: string
 }
 
 const ModalBuySell: React.FC<ModalBuySellProps> = ({isActive, setActive, coin, buttonName}) => {
-  const [buyCount, setBuyCount] = useState(1)
+  const {profile} = useTypedSelector((state) => state.auth);
+  const {userCoins} = useTypedSelector((state) => state.coins);
+  const [buyCount, setBuyCount] = useState(1);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (isActive) {
@@ -25,7 +30,6 @@ const ModalBuySell: React.FC<ModalBuySellProps> = ({isActive, setActive, coin, b
 
   function implementCount() {
     if (buyCount === coin.count) {
-
       setBuyCount(coin.count)
     } else {
       setBuyCount(buyCount + 1)
@@ -34,6 +38,57 @@ const ModalBuySell: React.FC<ModalBuySellProps> = ({isActive, setActive, coin, b
   function decrementCount() {
     if (buyCount > 1) {
       setBuyCount(buyCount - 1)
+    }
+  }
+
+  const buyCoins = () => {
+    if (profile?.balance && userCoins) {
+      const newBalance = +(profile?.balance - (buyCount * coin.price)).toFixed(2);
+      let newCount;
+      let newArrCoins;
+
+      const arr = userCoins.map(userCoin => {
+        if (userCoin.id === coin.id) {
+          newCount = userCoin.count + buyCount;
+          return {...userCoin, count: newCount}
+        }
+        return userCoin
+      })
+
+      if (newCount) {
+        newArrCoins = arr;
+      } else {
+        newArrCoins = [...userCoins, {...coin, count: buyCount}];
+      }
+
+      dispatch(buySellCoin(profile.id, newBalance, newArrCoins));
+      setActive(false);
+    }
+  }
+
+  const sellCoins = () => {
+    if (profile?.balance && userCoins) {
+      const newBalance = +(profile?.balance + (buyCount * coin.price)).toFixed(2);
+      let newCount;
+
+      const newArrCoins = userCoins.map((userCoin) => {
+        if (userCoin.id === coin.id) {
+          newCount = userCoin.count - buyCount;
+          return {...userCoin, count: newCount}
+        }
+        return userCoin
+      }).filter(userCoin => userCoin.count !== 0)
+
+      dispatch(buySellCoin(profile.id, newBalance, newArrCoins));
+      setActive(false)
+    }
+  }
+
+  const buySellAction = () => {
+    if (buttonName === "Buy") {
+      buyCoins()
+    } else {
+      sellCoins()
     }
   }
 
@@ -64,7 +119,7 @@ const ModalBuySell: React.FC<ModalBuySellProps> = ({isActive, setActive, coin, b
             $ {coin.price}
           </div>
           <div className={style.modal__btn}>
-            <CustomButton size="16px" onClick={() => setActive(true)}>{buttonName}</CustomButton>
+            <CustomButton size="16px" onClick={buySellAction}>{buttonName}</CustomButton>
           </div>
         </div>
       </div>

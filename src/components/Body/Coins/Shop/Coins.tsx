@@ -10,7 +10,9 @@ const Coins: React.FC = () => {
   const {coins} = useTypedSelector((state) => state.coins)
   const dispatch = useDispatch()
 
-  const coinItem = coins?.map(coin => <CoinItem key={coin.id} coin={coin} buttonName="Buy" />)
+  const coinItem = coins?.map(coin => <CoinItem key={coin.id}
+                                                         coin={coin}
+                                                         buttonName="Buy" />)
 
   useEffect(() => {
     dispatch(GetCoins())

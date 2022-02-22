@@ -1,9 +1,9 @@
-import {ICoin} from "./index";
+import {ICoin, IUserCoin} from "./index";
 
 
 export interface CoinsState {
   coins: ICoin[] | null;
-  userCoins: ICoin[] | null;
+  userCoins: IUserCoin[] | null;
 }
 
 export enum CoinsActionTypes {
@@ -17,7 +17,7 @@ interface GetCoins {
 }
 interface GetUserCoins {
   type: CoinsActionTypes.GET_USER_COINS;
-  payload: ICoin[]
+  payload: IUserCoin[]
 }
 
 export type CoinsAction = GetCoins | GetUserCoins;

@@ -81,44 +81,20 @@
   "users": [
     {
       "email": "pavel@email.com",
-      "password": "$2a$10$U0oXFwAAH4uGEAPCz68xV.A3k4j0q8ppGg4AS4Znzn0ajbd8LdVwa",
+      "password": "$2a$10$tG4AIveN/2Ynl6Wksn3nX.zaWGVk1PeTrdRtv0nT5sksFz.uIymKW",
       "fullName": "Pavel",
       "nickName": "PavlegPG",
       "image": "https://bipbap.ru/wp-content/uploads/2017/08/0-70.jpg",
-      "balance": 1000000,
+      "balance": 144142.04,
       "id": 1,
       "wallet": [
         {
-          "id": 13,
-          "name": "Bitcoin Cash",
-          "shortName": "BCH",
-          "price": 338.43,
-          "image": "https://assets.coingecko.com/coins/images/780/small/bitcoin-cash-circle.png?1594689492",
-          "count": 2
-        },
-        {
-          "id": 3,
-          "name": "BNB",
-          "shortName": "BNB",
-          "price": 430.8,
-          "image": "https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png?1644979850",
-          "count": 4
-        },
-        {
-          "id": 4,
-          "name": "Solana",
-          "shortName": "SOL",
-          "price": 104.22,
-          "image": "https://assets.coingecko.com/coins/images/4128/small/solana.png?1640133422",
-          "count": 3
-        },
-        {
-          "id": 5,
-          "name": "Avalanche",
-          "shortName": "AVAX",
-          "price": 96.55,
-          "image": "https://assets.coingecko.com/coins/images/12559/small/coin-round-red.png?1604021818",
-          "count": 1
+          "id": 7,
+          "name": "Dogecoin",
+          "shortName": "DOGE",
+          "price": 0.150015,
+          "image": "https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256",
+          "count": -27
         }
       ]
     }

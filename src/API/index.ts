@@ -1,5 +1,5 @@
 import axios, {AxiosResponse} from 'axios';
-import {AuthResponse, ICoin, IUser} from "../types";
+import {AuthResponse, ICoin, IUser, IUserCoin} from "../types";
 
 
 const API_URL = 'http://localhost:3004';
@@ -43,5 +43,8 @@ export const CoinsAPI = {
   },
   searchCoin(name: string): Promise<AxiosResponse<ICoin[]>> {
     return instance.get<ICoin[]>(`/coins?shortName=${name}`)
+  },
+  buySellCoins(id: number, balance: number, wallet: IUserCoin[]): Promise<AxiosResponse<IUser>> {
+    return instance.patch<IUser>(`/users/${id}`, {balance, wallet})
   }
 }
