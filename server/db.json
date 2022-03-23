@@ -164,6 +164,16 @@
         }
       ],
       "id": 2
+    },
+    {
+      "email": "unknown@gmail.com",
+      "password": "$2a$10$rZpNpsG3Exk3YOv2vF8WM.Kf43Io5cSPxhEeWCjRNAh04LFGb1mba",
+      "fullName": "unknown",
+      "nickName": "unknown",
+      "image": "",
+      "balance": 1000000,
+      "wallet": [],
+      "id": 3
     }
   ]
 }
