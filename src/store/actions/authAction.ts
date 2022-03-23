@@ -15,11 +15,15 @@ export const GetUser = (userID: string) => {
 
 export const GetLogin = ({email, password}: ILogin) => {
   return async (dispatch: Dispatch<AuthAction | CoinsAction>) => {
-    const response = await AuthAPI.login(email, password);
-    localStorage.setItem('token', response.data.accessToken);
-    localStorage.setItem('userID', `${response.data.user.id}`);
-    dispatch({type: AuthActionTypes.LOGIN, payload: response.data.user})
-    dispatch({type: CoinsActionTypes.GET_USER_COINS, payload: response.data.user.wallet})
+    try {
+      const response = await AuthAPI.login(email, password);
+      localStorage.setItem('token', response.data.accessToken);
+      localStorage.setItem('userID', `${response.data.user.id}`);
+      dispatch({type: AuthActionTypes.LOGIN, payload: response.data.user})
+      dispatch({type: CoinsActionTypes.GET_USER_COINS, payload: response.data.user.wallet})
+    } catch (e) {
+      alert("Incorrect email or password")
+    }
   }
 }
 
