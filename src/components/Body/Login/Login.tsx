@@ -68,6 +68,14 @@ const Login: React.FC = () => {
           <CustomButton size="16px" color="green" onClick={() => setActive(true)}>Create account</CustomButton>
         </div>
       </div>
+      <div className="info _container">
+        <p>
+          If you want to enter, and check how my app works
+          Just write:
+        </p>
+        <p>email: unknown@gmail.com</p>
+        <p>password: 123456</p>
+      </div>
       <Registration isActive={isActive} setActive={setActive} />
     </>
   );
