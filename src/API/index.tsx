@@ -4,7 +4,7 @@ import {AuthResponse, ICoin, IUser, IUserCoin} from "../types";
 import {Navigate} from "react-router-dom";
 
 
-const API_URL = 'http://localhost:3004';
+const API_URL = 'https://ccryptocurrency-shop.herokuapp.com';
 
 const instance = axios.create({
   baseURL: API_URL
