@@ -29,6 +29,5 @@ export const buySellCoin = (id: number, balance: number, coins: IUserCoin[]) => 
     const response = await CoinsAPI.buySellCoins(id, balance, coins);
     dispatch({type: AuthActionTypes.LOGIN, payload: response.data})
     dispatch({type: CoinsActionTypes.GET_USER_COINS, payload: response.data.wallet})
-    debugger
   }
 }

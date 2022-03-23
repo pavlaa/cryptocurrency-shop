@@ -4,4 +4,10 @@
 .wallet {
   color: $color-text;
   font-weight: 700;
+
+  &__not {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 25px;
+  }
 }

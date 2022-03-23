@@ -30,6 +30,7 @@ const Wallet: React.FC = () => {
       <div className={`${style.wallet} _container`}>
         <HeaderCoins title={'Wallet'} searchUserCoin={searchUserCoin}/>
         {userCoinsItem}
+        {userCoins?.length === 0 && <div className={style.wallet__not}>Coins not found!</div>}
       </div>
     </div>
   );
