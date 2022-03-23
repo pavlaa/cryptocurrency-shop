@@ -36,13 +36,15 @@ export const AuthAPI = {
                fullName:string,
                nickName: string,
                image: string | undefined,
-               balance: number): Promise<AxiosResponse<AuthResponse>> {
+               balance: number,
+               wallet: []): Promise<AxiosResponse<AuthResponse>> {
     return instance.post<AuthResponse>(`/register`, {email,
                                                               password,
                                                               fullName,
                                                               nickName,
                                                               image,
-                                                              balance})
+                                                              balance,
+                                                              wallet})
   },
   getUser(userID: string): Promise<AxiosResponse<IUser>> {
     return instance.get<IUser>(`/users/${userID}`)

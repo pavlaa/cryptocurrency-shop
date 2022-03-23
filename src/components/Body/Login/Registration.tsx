@@ -27,7 +27,7 @@ const Registration: React.FC<RegistrationProps> = ({isActive, setActive}) => {
     },
     validationSchema: Yup.object({
       newEmail: Yup.string().email('It is must be email@email.com').required('This field is required'),
-      newPassword: Yup.string().min(6, 'Password must be longest than 3 symbols').required('This field is required'),
+      newPassword: Yup.string().min(6, 'Password must be longest than 6 symbols').required('This field is required'),
       fullName: Yup.string().max(10, 'Full Name must be shortest than 10 symbols').required('This field is required'),
       nickName: Yup.string().max(10, 'Nickname must be shortest than 10 symbols').required('This field is required'),
       image: Yup.string().url('Enter link photo')

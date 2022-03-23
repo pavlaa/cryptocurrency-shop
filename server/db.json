@@ -121,6 +121,49 @@
           "count": 3
         }
       ]
+    },
+    {
+      "email": "example@gmail.com",
+      "password": "$2a$10$4Hm5kACVOjxrl.C8G1LYAO4xf20qz3TvYnSiiKxXgbA2j9HI9CbQu",
+      "fullName": "example",
+      "nickName": "example",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
+      "balance": 80527.79,
+      "wallet": [
+        {
+          "id": 5,
+          "name": "Avalanche",
+          "shortName": "AVAX",
+          "price": 96.55,
+          "image": "https://assets.coingecko.com/coins/images/12559/small/coin-round-red.png?1604021818",
+          "count": 5
+        },
+        {
+          "id": 8,
+          "name": "Litecoin",
+          "shortName": "LTC",
+          "price": 129.98,
+          "image": "https://assets.coingecko.com/coins/images/2/small/litecoin.png?1547033580",
+          "count": 1
+        },
+        {
+          "id": 10,
+          "name": "Lido Staked Ether",
+          "shortName": "STETH",
+          "price": 3135.53,
+          "image": "https://assets.coingecko.com/coins/images/13442/small/steth_logo.png?1608607546",
+          "count": 1
+        },
+        {
+          "id": 2,
+          "name": "Ethereum",
+          "shortName": "ETH",
+          "price": 3144.79,
+          "image": "https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880",
+          "count": 5
+        }
+      ],
+      "id": 2
     }
   ]
 }

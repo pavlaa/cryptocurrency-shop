@@ -26,7 +26,8 @@ export const GetLogin = ({email, password}: ILogin) => {
 export const RegistrationFetch = ({newEmail, newPassword, fullName, nickName, image}: IRegistration) => {
   return async (dispatch: Dispatch<AuthAction | CoinsAction>) => {
     const balance = 1000000;
-    const response = await AuthAPI.registration(newEmail, newPassword, fullName, nickName, image, balance);
+    const wallet: [] = [];
+    const response = await AuthAPI.registration(newEmail, newPassword, fullName, nickName, image, balance, wallet);
     localStorage.setItem('token', response.data.accessToken);
     localStorage.setItem('userID', `${response.data.user.id}`);
     dispatch({type: AuthActionTypes.LOGIN, payload: {...response.data.user, balance: 100000}})
